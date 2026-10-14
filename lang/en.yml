@@ -1,0 +1,27 @@
+en:
+  SilverShop\Personalisation:
+    NotReturnable: 'Personalised to your order — made to order and not returnable.'
+  SilverShop\Personalisation\Extension\OrderItemPersonalisationExtension:
+    Personalisation: 'Personalisation'
+  SilverShop\Personalisation\Extension\PersonalisationFormExtension:
+    ChooseEmpty: '(none)'
+    ChoosePrompt: 'Choose …'
+  SilverShop\Personalisation\Extension\ProductPersonalisationExtension:
+    Enable: 'Let customers personalise this product'
+    EnableDesc: 'When on, the fields below appear on the product page and are captured on each order line.'
+    Fields: 'Personalisation fields'
+    Info: 'Add one field per thing the customer enters (e.g. "Name to engrave"). Free text has a max length; a select uses the options you list. Each line a customer personalises differently becomes its own cart line.'
+    SaveFirst: 'Save this product first, then add the personalisation fields.'
+  SilverShop\Personalisation\Model\PersonalisationField:
+    FieldTypeDesc: 'Free text (with a max length) or a select from the options below.'
+    HelpTextDesc: 'Shown under the field on the product page to guide the customer.'
+    MaxLengthDesc: 'Maximum characters for a free-text field. Leave 0 to use the default ({default}).'
+    OptionsDesc: 'One option per line. Only used when the field type is "Select".'
+    PLURALNAME: 'Personalisation fields'
+    SINGULARNAME: 'Personalisation field'
+    db_FieldType: 'Field type'
+    db_HelpText: 'Help text'
+    db_Label: 'Label'
+    db_MaxLength: 'Max length'
+    db_Options: 'Options'
+    db_Required: 'Required'

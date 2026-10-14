@@ -1,0 +1,27 @@
+de:
+  SilverShop\Personalisation:
+    NotReturnable: 'Für Ihre Bestellung personalisiert — auf Bestellung gefertigt und nicht rückgabefähig.'
+  SilverShop\Personalisation\Extension\OrderItemPersonalisationExtension:
+    Personalisation: 'Personalisierung'
+  SilverShop\Personalisation\Extension\PersonalisationFormExtension:
+    ChooseEmpty: '(keine)'
+    ChoosePrompt: 'Auswählen …'
+  SilverShop\Personalisation\Extension\ProductPersonalisationExtension:
+    Enable: 'Kunden dieses Produkt personalisieren lassen'
+    EnableDesc: 'Wenn aktiviert, erscheinen die folgenden Felder auf der Produktseite und werden auf jeder Bestellposition erfasst.'
+    Fields: 'Personalisierungsfelder'
+    Info: 'Fügen Sie ein Feld pro Eingabe des Kunden hinzu (z. B. „Name zum Gravieren"). Freitext hat eine maximale Länge; eine Auswahl verwendet die von Ihnen aufgeführten Optionen. Jede unterschiedlich personalisierte Position wird zu einer eigenen Warenkorbzeile.'
+    SaveFirst: 'Speichern Sie dieses Produkt zuerst und fügen Sie dann die Personalisierungsfelder hinzu.'
+  SilverShop\Personalisation\Model\PersonalisationField:
+    FieldTypeDesc: 'Freitext (mit einer maximalen Länge) oder eine Auswahl aus den Optionen unten.'
+    HelpTextDesc: 'Wird unter dem Feld auf der Produktseite angezeigt, um den Kunden zu unterstützen.'
+    MaxLengthDesc: 'Maximale Zeichenanzahl für ein Freitextfeld. Lassen Sie 0 für den Standardwert ({default}).'
+    OptionsDesc: 'Eine Option pro Zeile. Wird nur verwendet, wenn der Feldtyp „Auswahl" ist.'
+    PLURALNAME: 'Personalisierungsfelder'
+    SINGULARNAME: 'Personalisierungsfeld'
+    db_FieldType: 'Feldtyp'
+    db_HelpText: 'Hilfetext'
+    db_Label: 'Bezeichnung'
+    db_MaxLength: 'Maximale Länge'
+    db_Options: 'Optionen'
+    db_Required: 'Pflichtfeld'

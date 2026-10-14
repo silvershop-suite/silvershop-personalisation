@@ -1,0 +1,31 @@
+---
+Name: silvershop-personalisation
+After:
+  - silvershop-config
+  - '#silvershop-product-bundles'
+---
+SilverShop\Page\Product:
+  extensions:
+    - SilverShop\Personalisation\Extension\ProductPersonalisationExtension
+
+SilverShop\Model\OrderItem:
+  extensions:
+    - SilverShop\Personalisation\Extension\OrderItemPersonalisationExtension
+  # Split cart lines by the personalisation hash (read by ShoppingCart::findLineItem via
+  # OrderItem::config()->required_fields). Config inheritance propagates + merges this to every
+  # subclass (Product/Variation/Bundle OrderItem), so a personalised line of any type is distinct.
+  required_fields:
+    - PersonalisationHash
+  # Show the entered personalisation as a column on the CMS order's item grid (the maker's packing view).
+  summary_fields:
+    PersonalisationCMSSummary: 'Personalisation'
+  casting:
+    PersonalisationCMSSummary: 'Text'
+
+SilverShop\Model\Order:
+  extensions:
+    - SilverShop\Personalisation\Extension\OrderPersonalisationExtension
+
+SilverShop\Forms\AddProductForm:
+  extensions:
+    - SilverShop\Personalisation\Extension\PersonalisationFormExtension

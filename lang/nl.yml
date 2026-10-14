@@ -1,0 +1,27 @@
+nl:
+  SilverShop\Personalisation:
+    NotReturnable: 'Gepersonaliseerd voor jouw bestelling — op maat gemaakt en niet retourneerbaar.'
+  SilverShop\Personalisation\Extension\OrderItemPersonalisationExtension:
+    Personalisation: 'Personalisatie'
+  SilverShop\Personalisation\Extension\PersonalisationFormExtension:
+    ChooseEmpty: '(geen)'
+    ChoosePrompt: 'Kies …'
+  SilverShop\Personalisation\Extension\ProductPersonalisationExtension:
+    Enable: 'Laat klanten dit product personaliseren'
+    EnableDesc: 'Indien aan, verschijnen de onderstaande velden op de productpagina en worden ze op elke bestelregel vastgelegd.'
+    Fields: 'Personalisatievelden'
+    Info: 'Voeg één veld toe per gegeven dat de klant invult (bijv. "Naam om te graveren"). Vrije tekst heeft een maximale lengte; een keuzelijst gebruikt de opties die je opgeeft. Elke regel die een klant anders personaliseert, wordt een eigen winkelwagenregel.'
+    SaveFirst: 'Sla dit product eerst op en voeg daarna de personalisatievelden toe.'
+  SilverShop\Personalisation\Model\PersonalisationField:
+    FieldTypeDesc: 'Vrije tekst (met een maximale lengte) of een keuze uit de onderstaande opties.'
+    HelpTextDesc: 'Wordt onder het veld op de productpagina getoond om de klant te helpen.'
+    MaxLengthDesc: 'Maximaal aantal tekens voor een vrijetekstveld. Laat 0 staan voor de standaard ({default}).'
+    OptionsDesc: 'Eén optie per regel. Wordt alleen gebruikt als het veldtype "Keuzelijst" is.'
+    PLURALNAME: 'Personalisatievelden'
+    SINGULARNAME: 'Personalisatieveld'
+    db_FieldType: 'Veldtype'
+    db_HelpText: 'Helptekst'
+    db_Label: 'Label'
+    db_MaxLength: 'Maximale lengte'
+    db_Options: 'Opties'
+    db_Required: 'Verplicht'

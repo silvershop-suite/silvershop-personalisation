@@ -1,0 +1,15 @@
+includes:
+    - vendor/cambis/silverstan/extension.neon
+
+parameters:
+    level: 5
+    paths:
+        - src
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    silverstan:
+        includeTestOnly: true
+    ignoreErrors:
+        # getSaveableFields() ships with the core add-to-cart data hook (a later core release); the module
+        # guards the call with method_exists() and degrades cleanly on core that predates it.
+        - '#Call to an undefined method [a-zA-Z0-9\\_]+::getSaveableFields\(\)#'

@@ -1,0 +1,27 @@
+SilverShop\Page\Product:
+  mug:
+    Title: 'Engraved Mug'
+    BasePrice: 15.00
+    AllowPurchase: 1
+    PersonalisationEnabled: 1
+  plainmug:
+    Title: 'Plain Mug'
+    BasePrice: 12.00
+    AllowPurchase: 1
+    PersonalisationEnabled: 0
+
+SilverShop\Personalisation\Model\PersonalisationField:
+  engraving:
+    Label: 'Name to engrave'
+    FieldType: 'Text'
+    Required: 1
+    MaxLength: 20
+    Sort: 1
+    Product: =>SilverShop\Page\Product.mug
+  font:
+    Label: 'Font'
+    FieldType: 'Select'
+    Options: "Serif\nSans\nScript"
+    Required: 0
+    Sort: 2
+    Product: =>SilverShop\Page\Product.mug

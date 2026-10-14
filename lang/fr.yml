@@ -1,0 +1,27 @@
+fr:
+  SilverShop\Personalisation:
+    NotReturnable: 'Personnalisé pour votre commande — fabriqué sur commande et non retournable.'
+  SilverShop\Personalisation\Extension\OrderItemPersonalisationExtension:
+    Personalisation: 'Personnalisation'
+  SilverShop\Personalisation\Extension\PersonalisationFormExtension:
+    ChooseEmpty: '(aucune)'
+    ChoosePrompt: 'Choisir …'
+  SilverShop\Personalisation\Extension\ProductPersonalisationExtension:
+    Enable: 'Permettre aux clients de personnaliser ce produit'
+    EnableDesc: 'Lorsque activé, les champs ci-dessous apparaissent sur la page produit et sont enregistrés sur chaque ligne de commande.'
+    Fields: 'Champs de personnalisation'
+    Info: 'Ajoutez un champ par information saisie par le client (par ex. « Nom à graver »). Le texte libre a une longueur maximale ; une liste déroulante utilise les options que vous indiquez. Chaque ligne personnalisée différemment devient sa propre ligne de panier.'
+    SaveFirst: 'Enregistrez d''abord ce produit, puis ajoutez les champs de personnalisation.'
+  SilverShop\Personalisation\Model\PersonalisationField:
+    FieldTypeDesc: 'Texte libre (avec une longueur maximale) ou une liste déroulante parmi les options ci-dessous.'
+    HelpTextDesc: 'Affiché sous le champ sur la page produit pour guider le client.'
+    MaxLengthDesc: 'Nombre maximal de caractères pour un champ de texte libre. Laissez 0 pour utiliser la valeur par défaut ({default}).'
+    OptionsDesc: 'Une option par ligne. Utilisé uniquement lorsque le type de champ est « Liste déroulante ».'
+    PLURALNAME: 'Champs de personnalisation'
+    SINGULARNAME: 'Champ de personnalisation'
+    db_FieldType: 'Type de champ'
+    db_HelpText: 'Texte d''aide'
+    db_Label: 'Libellé'
+    db_MaxLength: 'Longueur maximale'
+    db_Options: 'Options'
+    db_Required: 'Obligatoire'

@@ -1,0 +1,27 @@
+it:
+  SilverShop\Personalisation:
+    NotReturnable: 'Personalizzato per il tuo ordine — fatto su ordinazione e non restituibile.'
+  SilverShop\Personalisation\Extension\OrderItemPersonalisationExtension:
+    Personalisation: 'Personalizzazione'
+  SilverShop\Personalisation\Extension\PersonalisationFormExtension:
+    ChooseEmpty: '(nessuna)'
+    ChoosePrompt: 'Scegli …'
+  SilverShop\Personalisation\Extension\ProductPersonalisationExtension:
+    Enable: 'Consenti ai clienti di personalizzare questo prodotto'
+    EnableDesc: 'Se attivo, i campi sottostanti compaiono nella pagina del prodotto e vengono registrati su ogni riga d''ordine.'
+    Fields: 'Campi di personalizzazione'
+    Info: 'Aggiungi un campo per ogni dato inserito dal cliente (es. "Nome da incidere"). Il testo libero ha una lunghezza massima; un menu a tendina usa le opzioni che indichi. Ogni riga personalizzata in modo diverso diventa una riga separata nel carrello.'
+    SaveFirst: 'Salva prima questo prodotto, poi aggiungi i campi di personalizzazione.'
+  SilverShop\Personalisation\Model\PersonalisationField:
+    FieldTypeDesc: 'Testo libero (con una lunghezza massima) o un menu a tendina con le opzioni sottostanti.'
+    HelpTextDesc: 'Mostrato sotto il campo nella pagina del prodotto per guidare il cliente.'
+    MaxLengthDesc: 'Numero massimo di caratteri per un campo di testo libero. Lascia 0 per usare il valore predefinito ({default}).'
+    OptionsDesc: 'Un''opzione per riga. Usato solo quando il tipo di campo è "Menu a tendina".'
+    PLURALNAME: 'Campi di personalizzazione'
+    SINGULARNAME: 'Campo di personalizzazione'
+    db_FieldType: 'Tipo di campo'
+    db_HelpText: 'Testo di aiuto'
+    db_Label: 'Etichetta'
+    db_MaxLength: 'Lunghezza massima'
+    db_Options: 'Opzioni'
+    db_Required: 'Obbligatorio'

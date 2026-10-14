@@ -1,0 +1,44 @@
+/*
+ * Functional default styling for the personalisation module. Intentionally minimal and theme-neutral —
+ * a Fable polish pass is planned for the PDP field block and the line summary. Lengths in em so the module
+ * inherits the host font size (the startup theme sets html { font-size: 62.5% }, where rem renders tiny).
+ */
+
+.personalisation-summary {
+    margin: 0.5em 0 0;
+    padding: 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.personalisation-summary__row {
+    display: flex;
+    gap: 0.4em;
+    margin: 0;
+}
+
+.personalisation-summary__label {
+    margin: 0;
+    font-weight: 600;
+}
+
+.personalisation-summary__label::after {
+    content: ":";
+}
+
+.personalisation-summary__value {
+    margin: 0;
+    word-break: break-word;
+}
+
+.personalisation-notice {
+    margin: 0.75em 0;
+    padding: 0.5em 0.75em;
+    border-left: 0.25em solid currentColor;
+    font-size: 0.9em;
+    opacity: 0.85;
+}
+
+.personalisation-field {
+    margin-bottom: 0.75em;
+}

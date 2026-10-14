@@ -1,0 +1,18 @@
+---
+Name: silvershop-personalisation-invoicing
+Only:
+  moduleexists: 'silvershop/invoicing'
+After:
+  - silvershop-personalisation
+  - '#silvershop-invoicing'
+---
+# Carry the personalisation snapshot onto the immutable invoice / packing-slip line via the
+# invoicing DocumentLineSnapshotter's updateSnapshotLine hook. Guarded: applies only when
+# silvershop/invoicing is installed.
+SilverShop\Invoicing\ShopInvoiceLine:
+  extensions:
+    - SilverShop\Personalisation\Extension\InvoiceLinePersonalisationExtension
+
+SilverShop\Invoicing\ShopCreditMemoLine:
+  extensions:
+    - SilverShop\Personalisation\Extension\InvoiceLinePersonalisationExtension

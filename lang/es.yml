@@ -1,0 +1,27 @@
+es:
+  SilverShop\Personalisation:
+    NotReturnable: 'Personalizado para tu pedido — hecho por encargo y no retornable.'
+  SilverShop\Personalisation\Extension\OrderItemPersonalisationExtension:
+    Personalisation: 'Personalización'
+  SilverShop\Personalisation\Extension\PersonalisationFormExtension:
+    ChooseEmpty: '(ninguna)'
+    ChoosePrompt: 'Elegir …'
+  SilverShop\Personalisation\Extension\ProductPersonalisationExtension:
+    Enable: 'Permitir a los clientes personalizar este producto'
+    EnableDesc: 'Cuando está activado, los campos de abajo aparecen en la página del producto y se registran en cada línea del pedido.'
+    Fields: 'Campos de personalización'
+    Info: 'Añade un campo por cada dato que introduzca el cliente (p. ej. "Nombre para grabar"). El texto libre tiene una longitud máxima; una lista desplegable usa las opciones que indiques. Cada línea personalizada de forma distinta se convierte en su propia línea del carrito.'
+    SaveFirst: 'Guarda primero este producto y luego añade los campos de personalización.'
+  SilverShop\Personalisation\Model\PersonalisationField:
+    FieldTypeDesc: 'Texto libre (con una longitud máxima) o una lista desplegable con las opciones de abajo.'
+    HelpTextDesc: 'Se muestra bajo el campo en la página del producto para guiar al cliente.'
+    MaxLengthDesc: 'Número máximo de caracteres para un campo de texto libre. Deja 0 para usar el valor predeterminado ({default}).'
+    OptionsDesc: 'Una opción por línea. Solo se usa cuando el tipo de campo es "Lista desplegable".'
+    PLURALNAME: 'Campos de personalización'
+    SINGULARNAME: 'Campo de personalización'
+    db_FieldType: 'Tipo de campo'
+    db_HelpText: 'Texto de ayuda'
+    db_Label: 'Etiqueta'
+    db_MaxLength: 'Longitud máxima'
+    db_Options: 'Opciones'
+    db_Required: 'Obligatorio'
