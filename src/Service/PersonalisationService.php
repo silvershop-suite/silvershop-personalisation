@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace SilverShop\Personalisation\Service;
 
-use SilverShop\Forms\AddProductForm;
 use SilverShop\Model\Buyable;
 use SilverShop\Model\Variation\Variation;
 use SilverShop\Page\Product;
@@ -180,15 +179,5 @@ class PersonalisationService
     public static function reset(): void
     {
         self::$stash = [];
-    }
-
-    /**
-     * Whether the installed silvershop/core exposes the pre-add data hook that lets personalisation compose
-     * with variation and bundle products (the single-winner add-to-cart form class cannot). Plain products
-     * never need it (they use {@see \SilverShop\Personalisation\Form\PersonalisationAddProductForm}).
-     */
-    public static function captureHookAvailable(): bool
-    {
-        return method_exists(AddProductForm::class, 'prepareSaveableData');
     }
 }

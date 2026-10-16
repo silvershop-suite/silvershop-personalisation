@@ -81,12 +81,4 @@ class PersonalisationFormTest extends SapphireTest
         $this->assertArrayHasKey('PersonalisationHash', $data);
         $this->assertNotNull(PersonalisationService::recall((string) $data['PersonalisationHash']));
     }
-
-    public function testCaptureHookAvailabilityMatchesCoreCapability(): void
-    {
-        $this->assertSame(
-            method_exists(AddProductForm::class, 'prepareSaveableData'),
-            PersonalisationService::captureHookAvailable()
-        );
-    }
 }

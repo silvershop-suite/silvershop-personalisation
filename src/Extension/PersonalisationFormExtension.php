@@ -15,14 +15,12 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\Validation\RequiredFieldsValidator;
 
 /**
- * Renders a product's personalisation fields on the add-to-cart form and (on core versions that fire it)
- * implements the pre-add `updateAddToCartData` hook that combines the entered values into the line identity for
- * variation and bundle products.
+ * Renders a product's personalisation fields on the add-to-cart form and implements the pre-add
+ * `updateAddToCartData` hook that combines the entered values into the line identity for every product type.
  *
  * Applied to {@link \SilverShop\Forms\AddProductForm}; because VariationForm and BundleAddProductForm both call
  * the parent constructor (which fires `updateAddProductForm`), the one field-rendering method covers plain,
- * variation and bundle forms. Plain products capture via the PersonalisationAddProductForm; variation/bundle
- * products need the core hook, so their fields render only when that hook is available.
+ * variation and bundle forms, and the core hook combines the values for all of them.
  *
  * @extends Extension<\SilverShop\Forms\AddProductForm>
  */
@@ -33,13 +31,6 @@ class PersonalisationFormExtension extends Extension
         $form = $this->getOwner();
         $product = $this->personalisableProduct();
         if (!$product instanceof Product) {
-            return;
-        }
-
-        // Variation / bundle lines can only capture personalisation through the core add-to-cart data hook
-        // (the single-winner form class is already taken). Without it, render nothing rather than show fields
-        // that would silently fail to split the line.
-        if (!$this->isPlainProduct($product) && !PersonalisationService::captureHookAvailable()) {
             return;
         }
 
@@ -117,13 +108,5 @@ class PersonalisationFormExtension extends Extension
         }
 
         return $record->getPersonalisationActive() ? $record : null;
-    }
-
-    private function isPlainProduct(Product $product): bool
-    {
-        $hasVariations = $product->hasMethod('Variations') && $product->Variations()->exists();
-        $isBundle = is_a($product, 'SilverShop\\ProductBundles\\Page\\BundleProduct');
-
-        return !$hasVariations && !$isBundle;
     }
 }
