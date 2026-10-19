@@ -24,7 +24,7 @@ No surcharge, reusable field groups or category/global defaults in v1 — see [R
 
 The crux is making a free-text value part of the line's identity so the cart splits lines by it, reusing
 SilverShop's own per-line `required_fields` / `MatchObjectFilter` mechanism (the same machinery
-`silvershop/product-bundles` rides):
+`silvershop-suite/product-bundles` rides):
 
 - A `DataExtension` on the **base** `SilverShop\Model\OrderItem` adds two columns, shared by every line type
   (plain product, variation, bundle):
@@ -54,18 +54,18 @@ single-winner add-to-cart form class. So:
 ## Installation
 
 ```bash
-composer require silvershop/personalisation
+composer require silvershop-suite/personalisation
 ```
 
 Then `vendor/bin/sake db:build --flush` (or `/dev/build?flush=all`).
 
 ## Optional integrations (`suggest`)
 
-- **silvershop/invoicing** — carries the personalisation onto the immutable invoice / packing-slip / credit-memo
+- **silvershop-suite/invoicing** — carries the personalisation onto the immutable invoice / packing-slip / credit-memo
   line via the `updateSnapshotLine` hook (guarded; only active when invoicing is installed).
-- **silvershop/order-admin** — groups the order screen so the personalised line reads cleanly when packing.
-- **silvershop/product-bundles** — personalisation composes with bundle lines (needs the core hook above).
-- **silvershop/storefront** — themed product page + cart line summary.
+- **silvershop-suite/order-admin** — groups the order screen so the personalised line reads cleanly when packing.
+- **silvershop-suite/product-bundles** — personalisation composes with bundle lines (needs the core hook above).
+- **silvershop-suite/storefront** — themed product page + cart line summary.
 
 ## Templates
 
