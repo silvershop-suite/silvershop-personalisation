@@ -2,7 +2,7 @@
      (cart, side-cart, checkout summary, order confirmation, account order history, invoice).
      No-op for a non-personalised line. --%>
 <% if $IsPersonalised %>
-    <% require css('silvershop/personalisation: css/personalisation.css') %>
+    <% require css('silvershop-suite/personalisation: css/personalisation.css') %>
     <dl class="personalisation-summary">
         <% loop $PersonalisationSummary %>
             <div class="personalisation-summary__row">
