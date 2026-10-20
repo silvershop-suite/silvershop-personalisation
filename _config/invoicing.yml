@@ -1,7 +1,7 @@
 ---
 Name: silvershop-personalisation-invoicing
 Only:
-  moduleexists: 'silvershop/invoicing'
+  moduleexists: 'silvershop-suite/invoicing'
 After:
   - silvershop-personalisation
   - '#silvershop-invoicing'
