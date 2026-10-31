@@ -129,4 +129,35 @@ class PersonalisationServiceTest extends SapphireTest
         $data = [$engraving->inputName() => 'John'];
         $this->assertNull(PersonalisationService::applyToData($data, $plain), 'not personalisable => no hash');
     }
+
+    /**
+     * Security regression: PersonalisationHash feeds the cart's line-matching WHERE (OrderItem.required_fields) and
+     * must never be client-controlled, or a submitted value reaches that query unescaped (SQL injection). applyToData
+     * must strip any inbound value on every path and only ever emit a server-computed md5.
+     */
+    public function testApplyToDataStripsClientSuppliedHash(): void
+    {
+        $mug = $this->objFromFixture(Product::class, 'mug');
+        $plain = $this->objFromFixture(Product::class, 'plainmug');
+        $engraving = $this->objFromFixture(PersonalisationField::class, 'engraving');
+        $injection = "' OR '1'='1";
+
+        // Plain product: the client value must be dropped entirely (line stays plain, nothing hits the filter).
+        $data = ['Quantity' => 1, 'PersonalisationHash' => $injection];
+        $this->assertNull(PersonalisationService::applyToData($data, $plain), 'not personalisable => no hash');
+        $this->assertArrayNotHasKey('PersonalisationHash', $data, 'client hash stripped for a plain product');
+
+        // Personalisable product, nothing entered: still dropped (plain line, able to merge).
+        $empty = ['Quantity' => 1, 'PersonalisationHash' => $injection];
+        $this->assertNull(PersonalisationService::applyToData($empty, $mug), 'nothing entered => plain line');
+        $this->assertArrayNotHasKey('PersonalisationHash', $empty, 'client hash stripped when nothing entered');
+
+        // Personalisable product with input: the client value is replaced by the server-computed md5, never kept.
+        $data = [$engraving->inputName() => 'John', 'Quantity' => 1, 'PersonalisationHash' => $injection];
+        $hash = PersonalisationService::applyToData($data, $mug);
+        $this->assertNotNull($hash);
+        $this->assertSame($hash, $data['PersonalisationHash'] ?? null);
+        $this->assertNotSame($injection, $data['PersonalisationHash'], 'client hash overwritten, not trusted');
+        $this->assertMatchesRegularExpression('/^[0-9a-f]{32}$/', (string) $data['PersonalisationHash']);
+    }
 }

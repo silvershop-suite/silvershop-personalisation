@@ -65,6 +65,13 @@ class PersonalisationService
      */
     public static function applyToData(array &$data, Buyable $buyable): ?string
     {
+        // Security: PersonalisationHash is a server-computed line-identity value that core folds into the cart's
+        // line-matching WHERE (it is listed in OrderItem.required_fields). It must NEVER be client-controlled — a
+        // submitted PersonalisationHash would otherwise travel into that query unescaped (MatchObjectFilter does not
+        // raw2sql a real DB field's value). Drop any inbound value up front, before any early return, so only a hash
+        // we compute below (always a 32-char md5 hex) can ever reach the cart.
+        unset($data['PersonalisationHash']);
+
         $product = self::personalisableProduct($buyable);
         if (!$product instanceof Product) {
             return null;
