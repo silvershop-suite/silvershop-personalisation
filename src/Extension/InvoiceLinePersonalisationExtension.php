@@ -11,7 +11,7 @@ use SilverStripe\Model\List\ArrayList;
 use SilverStripe\ORM\DataObject;
 
 /**
- * Optional (suggest) integration with silvershop/invoicing: copies the order line's personalisation snapshot
+ * Optional (suggest) integration with silvershop-suite/invoicing: copies the order line's personalisation snapshot
  * onto the immutable invoice / packing-slip / credit-memo line at snapshot time, via the module's
  * `updateSnapshotLine` hook, and exposes it for the document templates.
  *

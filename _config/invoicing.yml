@@ -8,7 +8,7 @@ After:
 ---
 # Carry the personalisation snapshot onto the immutable invoice / packing-slip line via the
 # invoicing DocumentLineSnapshotter's updateSnapshotLine hook. Guarded: applies only when
-# silvershop/invoicing is installed.
+# silvershop-suite/invoicing is installed.
 SilverShop\Invoicing\ShopInvoiceLine:
   extensions:
     - SilverShop\Personalisation\Extension\InvoiceLinePersonalisationExtension
