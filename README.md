@@ -45,11 +45,10 @@ single-winner add-to-cart form class. So:
 
 - **Plain products** work with **zero core change**: a `PersonalisationAddProductForm` (swapped in via the
   existing `updateFormClass` hook) folds the entered values into the hash before adding to the cart.
-- **Variation / bundle products** need a tiny upstream core hook, `updateAddToCartData(&$data, $buyable)`, fired
-  in `AddProductForm`/`VariationForm::addtocart()` (proposed for a future core release). The module **detects the
-  hook** (`PersonalisationService::captureHookAvailable()`) and uses it when present. When it is absent, the
-  personalisation fields are **not rendered** on variation/bundle products — so a line is never silently
-  mis-merged — and personalisation there needs core ≥ the release that adds the hook.
+- **Variation / bundle products** use core's `updateAddToCartData(&$data, $buyable)` hook, fired in
+  `AddProductForm`/`VariationForm::addtocart()`, available since **silvershop/core 6.2.0**. The module **detects
+  the hook** (`PersonalisationService::captureHookAvailable()`); on an older core the personalisation fields are
+  **not rendered** on variation/bundle products, so a line is never silently mis-merged.
 
 ## Installation
 
